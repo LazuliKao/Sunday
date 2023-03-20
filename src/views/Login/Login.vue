@@ -71,6 +71,9 @@ const login = async () => {
       })
       .catch(err => {
         // TODO code 422 id or password is wrong
+if (err.response.status == 422) {
+isPasswordValid.value = "密码错误";
+}
       })
   }
 }
